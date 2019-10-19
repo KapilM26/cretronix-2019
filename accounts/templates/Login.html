@@ -1,0 +1,103 @@
+{% load staticfiles %}
+<html>
+<head>
+<title>
+Login Form </title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'btst/bootstrap.min.css' %}">
+  <script src="{% static 'btst/jquery.min.js' %}"></script>
+  <script src="{% static 'btst/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+	<link href="{% static 'btst/css2.css' %}" rel="stylesheet">
+    
+<link href="{% static 'btst/bootstrap.min2.css' %}" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<script src="{% static 'btst/bootstrap.min2.js' %}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="{% static 'btst/popper.min.js' %}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+   
+
+<nav id="efec-scroll" class="navbar navbar-expand-md bg-dark navbar-dark fixed-top bg-transparent">
+  <div class="container">
+
+    <a class="navbar-brand">
+      
+      <img src="{% static 'newlogo.png' %}"height="140" width="280" alt="" class="d-inline-block align-left mr-2">
+    </a>
+
+
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+    <div id="navbarSupportedContent" class="collapse navbar-collapse" class="pull-right">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="{% url 'register' %}" class="nav-link"><h3>Home</h3> <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link"><h3>About</h3></a></li>
+        <li class="nav-item"><a href="{% url 'rules' %}" class="nav-link"><h3>Rules</h3></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</head>
+<body>    
+    <div class="loginbox">
+      
+    <img src="{% static 'avatar.jpeg' %}" class="avatar">
+        <form action="" method="post">
+          {% csrf_token %}
+		 <div class="loginbox">
+        {% if error %}
+        <center><font color="red"><h2>{{error}}</h2></font></center>
+        {% endif %}
+		  <div class="col-sm-8" >
+		 <div class="col-sm-4">
+		 <p>Username 1  </p>
+            <input type="text" name="name_1" placeholder="Enter the username ">
+			 <p>Email </p>
+            <input type="text" name="email_1" placeholder="Enter your email">
+			 <p>Mobile Number   </p>
+            <input type="text" name="number_1" placeholder="Enter the mobile number">
+			</div>
+			<div class="col-sm-4">
+			<p>Username 2 </p>
+            <input type="text" name="name_2" placeholder="Enter the username">
+			 <p>Email  </p>
+            <input type="text" name="email_2" placeholder="Enter your email">
+			 <p>Mobile Number   </p>
+            <input type="text" name="number_2" placeholder="Enter the mobile number">
+			 </div>
+			<div class="col-sm-4">
+			<p>Username 3  </p>
+            <input type="text" name="name_3" placeholder="Enter the username">
+			 <p>Email  </p>
+            <input type="text" name="email_3" placeholder="Enter your email">
+			 <p>Mobile Number  </p>
+            <input type="text" name="number_3" placeholder="Enter the mobile number">
+         </div>
+		 </div>
+		 <div class="col-sm-4">
+		 	<p>Team Name  </p>
+            <input type="text" name="username" placeholder="Enter the Team Name ">
+            <p>Password </p>
+            <input type="password" name="password" placeholder="Enter the password">
+            <input type="submit">
+			</div>
+         </form>   
+    </div>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+	<div class="footer">
+  <div><img src="{% static 'PISB_White.png' %}" class="pict"> </div></html>

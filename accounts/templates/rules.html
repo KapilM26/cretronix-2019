@@ -1,0 +1,131 @@
+
+<html>
+{% load staticfiles %}
+<head>
+    <title>Aboutus Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" type = "text/css" href="abtus.css">
+    <link rel="stylesheet" href="{% static 'btst/bootstrap.min.css' %}">
+    <link href="{% static 'btst/css.css' %}" rel="stylesheet">
+    <link href="{% static 'btst/css2.css' %}" rel="stylesheet">
+
+
+</head>
+
+
+
+<body><style>body {
+  background-image:radial-gradient(circle,#ff4500,#000);
+  font-family: 'Quicksand', sans-serif;
+  line-height:20px;
+  }
+  <style>
+.uls {
+  text-align: justify;
+ 
+}
+.button {
+  background-color: #333333;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
+</style
+}</style>
+      <form action="user/allque">
+    <div class="container-fluid">
+        <div class="row" style="height: 7vh;background-color: #000000;color: white">
+            <div class="col-lg-1 " style="height: 7vh">
+                    
+            </div>
+            <div class="col-lg-1" style="text-align: center; height: 7vh">
+
+            </div>
+            <div class="col-lg-3" style="display: flex;align-content: center;margin-top: 15px;">
+                
+            </div>
+            <div class="col-lg-5" style="text-align: center; height: 7vh">
+
+            </div>
+            <div class="col-lg-2 mt-1" style="height: 7vh" style="display: flex; align-items: center;">
+                
+            </div>
+        </div>
+        
+            <div class="row"
+                style="height: 86vh; padding: 9vh; justify-content: center;display: flex;align-items: center">
+                <div class="container">
+                    <div class="row" style="height: 68vh">
+                        <div class="col-lg-12" 
+                            style="height: 6vh;margin: 1px;justify-content: center;display: flex;align-items: center;color:white;font-family: 'Quicksand', sans-serif;">
+
+                            <h1 class="title"><font color="white"><b> RULES </b></font></h1>
+                        </div>
+                        <font color="white"><div class="container">
+                            <div class="row" style="height: 60vh">
+                                <div class="col-lg-12" style="height: 50vh;padding: 9vh; text-align: justify; ">
+                                    <ul class="uls " style="text-align: justify;" >
+<h4>
+<ul>
+•	Each team can consist of maximum of 3 members.
+</ul>
+<ul>•	The quiz will contain 30 questions.</ul>
+<ul>
+•	Each question will be of 1 mark. So, the team will be scored out of 30 marks.
+</ul>
+<ul> 
+•	The duration of the test will be of 30 minutes. It will get submitted automatically once the time is up. 
+</ul>
+<ul>
+• All the questions can be attempted only once.
+</ul>
+<ul>
+•	There is no negative marking in the quiz.
+</ul>
+<ul>
+•	There is only one correct option.
+</ul>
+<ul>
+•	Use of calculator or any electronic gadget is strictly prohibited.
+</ul>
+<ul>
+•   Teams having score above threshold will be selected for Round 2.
+</ul>
+<ul>
+• Pressing the refresh or back button on the browser will result in automatic submission of the test.
+</ul>
+ </h4>
+<br>
+                                        
+
+                                    </ul>
+                                </div>
+                                <div class="row"
+                                    style="height: 35px;margin-left: 510px;display: flex;width:100px;margin-top:60px; ">
+                                    <div><a href="{% url 'register' %}"><button type="button" class="button"><b>Home</b></button </div>
+                                </div>
+                               
+                            </div>
+                        </div></font>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+      </form>
+</body>
+ 
+
+</html>

@@ -1,0 +1,131 @@
+<html>
+  {% load staticfiles %}
+<head>
+<title>MCQ ONLINE </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, intial scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href={% static 'btst/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="{% static 'btst/bootstrap.min.js' %}"></script>
+  <link href="{% static 'btst/css2.css' %}" rel="stylesheet">
+
+    </head>
+   <style>
+     
+     </style>
+       
+     <header>	
+		<div class="container" style="width:69vw;">
+        
+
+            
+              <div class="text-center" ><center>Time left = <span id="timer"></span></center></div>
+            
+		<div class="pull-right"><center><div><a href="{% url 'logout' %}"><button type="button" class="logout" id="logout"><b>Logout</b></button </div></center></a></div>
+            <div class="pull-left"><img class = "logo" src="{%static 'credenzlogo.png' %}" alt="Credenz logo" height="90" width="180"></div>
+             <div><font color="white">
+             <div><font color="white">
+		   <p id="demo"></p>
+        </div>
+	</div>        
+    </header>
+	<body>
+	<div class="container" style="height:70vh; width:72vw; overflow-x:hidden;">
+  {% if v.img %}
+  <img src="{{ v.img.url }}"  class="question-img">
+  {% endif %}
+              
+                
+               <font color="white"><form class="questionform" id="q1" data-question="1" method="POST" action="{% url 'anscheck' %}">{% csrf_token %}
+		<div class="text-white" style="overflow-x:hidden; background:rgb(0,0,0,0); overflow-y:visible; width:70vw;">
+                <h2 class="question" style="font-size: 20px;">{{v.question}}</h2></div>
+                <ol>
+                <li style="font-size: 15px;"><input type="radio" name="select"  value="1" required />{{v.A}}</li>
+                <li style="font-size: 15px;"><input type="radio" name="select"  value="2" required />{{v.B}}</li>
+                <li style="font-size: 15px;" ><input type="radio" name="select" value="3" required />{{v.C}}</li>
+                <li style="font-size: 15px;" ><input type="radio" name="select" value="4" required />{{v.D}}</li>
+                </ol>
+                   <center><div><button type="submit" class="submit" style="margin-top:80px; margin-left:400px; margin-bottom:50px;"><b>SUBMIT</b></button </div></center>
+                      </form></font>
+                    	
+                                  
+	</div>       
+
+
+    
+    </div>
+<script>
+// Set the date we're counting down to
+document.getElementById('timer').innerHTML =
+  Math.floor({{t}}/60) + ":" + {{t}}%60;
+startTimer();
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  //if(m<0){alert('timer completed')}
+  
+  if(presentTime=="0:01"){
+    document.getElementById('logout').click();
+  }
+  
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  setTimeout(startTimer, 1000);
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}</script></font>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+</script>
+   <script>
+function CallbackFunction(event) {
+    if(window.event) {
+        if (window.event.clientX < 40 && window.event.clientY < 0) {
+            document.getElementbyId('logout').click();
+        }else{
+            document.getElementbyId('logout').click();
+        }
+    }else{
+        if (event.currentTarget.performance.navigation.type == 2) {
+            document.getElementbyId('logout').click();
+        }
+        if (event.currentTarget.performance.navigation.type == 1) {
+            document.getElementbyId('logout').click();
+        }           
+    }
+}
+};
+</script>
+
+        
+
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+
+                    <script src="{% static 'jquery.js' %}"></script>
+                    <script src="{% static 'quiz.js' %}"></script>
+    </body>
+	   <div class="footer">
+  <div class= "pull-right"><img class="img-thumbnail" src="{% static 'PISB_White.png' %}" alt="PISB Logo" />
+     </div>
+	</html>
